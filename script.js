@@ -50,6 +50,12 @@ buttons.forEach((button) => {
         } else if (button.classList == 'number' && operatorSet == true) { //if operator has been set, puts numbers into number B
             numB = numB + button.textContent;
             display.textContent = numA + ' ' + operator + ' ' + numB;
+        } else if (button.id == 'clear') {
+            numA = '';
+            numB = '';
+            operator = undefined;
+            operatorSet = false;
+            display.textContent = '';
         }
     })
 });
