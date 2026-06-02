@@ -8,6 +8,11 @@
     align-items: stretch;
 }
 
+.row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 button {
     margin: 10px;
     width: 40px;

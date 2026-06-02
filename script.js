@@ -17,9 +17,9 @@ function divide (a, b) {
 let operator = undefined;
 let numA = '';
 let numB = '';
-let operatorSet = false;
+let operatorSet = false; // this boolean operator is required to let button event listener know whether to add numbers to numA or numB
 
-function operate(a, b, operator) {
+function operate(a, b, operator) { //evaluates expression depending on what operator is supplied
     if (operator === '+') {
         return add(a, b);
     } else if (operator === '-') {
@@ -30,6 +30,8 @@ function operate(a, b, operator) {
         return divide(a, b);
     }
 }
+
+const display = document.querySelector('#display');
 
 const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
@@ -50,3 +52,4 @@ buttons.forEach((button) => {
         }
     })
 });
+
