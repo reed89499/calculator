@@ -40,8 +40,12 @@ buttons.forEach((button) => {
             operator = button.textContent;
             operatorSet = true;
             display.textContent = numA + ' ' + operator;
-        } else if (button.id == 'equal') { //checks if button is equal, evaluates expression, resets number B and logs result as number A for continued math
-            numA = operate(Number(numA), Number(numB), operator);
+        } else if (button.id == 'equal' && (numA === '' || numB === '' || operatorSet === false)) {
+            display.textContent = 'ERROR';
+        } else if (button.id == 'equal' && operator === '/' && (numA == 0 || numB == 0)) {
+            display.textContent = 'Can\t divide by zero';
+        } else if(button.id == 'equal') { //checks if button is equal, evaluates expression, resets number B and logs result as number A for continued math
+            numA = Math.round(operate(Number(numA), Number(numB), operator));
             numB = '';
             display.textContent = numA;
         } else if (button.classList == 'number' && operatorSet == false) { //if operator has not been set yet, puts numbers into numb A
