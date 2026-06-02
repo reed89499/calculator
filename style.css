@@ -1,0 +1,15 @@
+#calculator {
+    display: flex;
+    flex-direction: column;
+    border-style: solid; 
+    width: 300px;
+    height: 500px;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+button {
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+}
