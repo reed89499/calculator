@@ -39,16 +39,17 @@ buttons.forEach((button) => {
         if (button.classList == 'operator' && button.id != 'equal') { //checks if the button pressed is an operator then sets operator as operator variable, also sets operator set to true
             operator = button.textContent;
             operatorSet = true;
+            display.textContent = numA + ' ' + operator;
         } else if (button.id == 'equal') { //checks if button is equal, evaluates expression, resets number B and logs result as number A for continued math
             numA = operate(Number(numA), Number(numB), operator);
             numB = '';
-            console.log(numA)
+            display.textContent = numA;
         } else if (button.classList == 'number' && operatorSet == false) { //if operator has not been set yet, puts numbers into numb A
             numA = numA + button.textContent;
-            console.log(numA);
+            display.textContent = numA;
         } else if (button.classList == 'number' && operatorSet == true) { //if operator has been set, puts numbers into number B
             numB = numB + button.textContent;
-            console.log(numB);
+            display.textContent = numA + ' ' + operator + ' ' + numB;
         }
     })
 });
